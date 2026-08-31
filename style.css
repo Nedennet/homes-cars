@@ -90,6 +90,7 @@ img {
   font-family: 'Coconut Island', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 10px rgba(241, 208, 77, 0.18);
+  min-width: 0;
 }
 
 .logo-image {
@@ -102,6 +103,8 @@ img {
 .logo-text {
   display: inline-block;
   font-family: 'Coconut Island', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.1;
+  word-break: break-word;
 }
 
 .navbar nav a {
@@ -551,10 +554,11 @@ footer p {
 
   .navbar .container {
     align-items: flex-start;
+    gap: 10px;
   }
 
   .logo {
-    font-size: 1.35rem;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
     line-height: 1.15;
     gap: 8px;
     width: 100%;
@@ -566,14 +570,18 @@ footer p {
   }
 
   .navbar nav {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 8px;
     width: 100%;
   }
 
   .navbar nav a {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     margin-left: 0;
+    flex: 1 1 0;
+    text-align: center;
   }
 
   .btn-nav {
@@ -621,8 +629,9 @@ footer p {
   }
 
   .service-list {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .service-list li {
@@ -635,8 +644,15 @@ footer p {
   }
 
   .price-row {
+    display: block;
     font-size: 0.82rem;
-    gap: 8px;
+    gap: 0;
+    line-height: 1.5;
+  }
+
+  .price-row strong {
+    display: block;
+    margin-top: 2px;
   }
 
   .contact-section {

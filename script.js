@@ -1,5 +1,5 @@
 // Numéro WhatsApp par défaut (au format international sans espaces)
-const whatsappNumber = "221000000000";
+const whatsappNumber = "221776148620";
 
 const mediaLibrary = {
   studio: {
