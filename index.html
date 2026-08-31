@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations de Vacances & Véhicule - Bambilor, Sénégal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">
+        <img class="logo-image" src="photos/logo.png" alt="Logo Bambilor Homes and Cars">
+        <span class="logo-text">Bambilor Homes and Cars</span>
+      </h1>
+      <nav>
+        <a href="#offres">Nos Offres</a>
+        <a href="#contact" class="btn-nav">Réserver</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Séjournez et déplacez-vous en toute sérénité au Sénégal</h2>
+      <p>Hébergements confortables à Bambilor et service de transport avec chauffeur.</p>
+    </div>
+  </section>
+
+  <main class="container" id="offres">
+    <h2 class="section-title">Nos Offres de Location</h2>
+    
+    <div class="grid-locations">
+
+      <article class="card">
+        <button class="card-image media-trigger" type="button" onclick="openMediaViewer('studio')" aria-label="Voir les photos et la vidéo du studio à Bambilor">
+          <img src="photos/villa.jpg" alt="Studio à Bambilor" onerror="this.src='https://via.placeholder.com/600x400?text=Photo+Studio';">
+          <span class="badge">Hébergement</span>
+        </button>
+        <div class="card-content">
+          <h3>Studio à Bambilor</h3>
+          <p class="description">Studio meublé et équipé, idéal pour les séjours individuels ou en couple dans une zone calme.</p>
+          
+          <div class="pricing-table">
+            <div class="price-row"><span>Tarif standard :</span> <strong>30€ / jour</strong></div>
+            <div class="price-row highlight"><span>À partir d'1 semaine :</span> <strong>27€ / jour</strong></div>
+            <div class="price-row highlight"><span>Au-delà de 10 jours :</span> <strong>25€ / jour</strong></div>
+          </div>
+
+          <div class="services-block">
+            <p class="services-title">Services inclus</p>
+            <ul class="service-list" aria-label="Services du studio">
+              <li>Climatisation / ventilation</li>
+              <li>Wifi illimité / fibre</li>
+              <li>Cuisine équipée</li>
+              <li>Machine à laver</li>
+              <li>Ballon d'eau chaude</li>
+            </ul>
+          </div>
+          
+          <button class="btn-book" onclick="selectOffer('Studio Bambilor')">Réserver ce studio</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <button class="card-image media-trigger" type="button" onclick="openMediaViewer('pickup')" aria-label="Voir les photos et la vidéo du pick-up avec chauffeur">
+          <img src="photos/pickup1.jpg" alt="Pick-up avec chauffeur" onerror="this.src='https://via.placeholder.com/600x400?text=Photo+Pick-up';">
+          <span class="badge badge-car">Transport</span>
+        </button>
+        <div class="card-content">
+          <h3>Location Pick-up avec Chauffeur</h3>
+          <p class="description">Véhicule Pick-up robuste avec chauffeur professionnel pour vos déplacements professionnels ou touristiques.</p>
+          
+          <div class="pricing-table">
+            <div class="price-row"><span>Tarif standard :</span> <strong>75€ / jour</strong></div>
+            <div class="price-row highlight"><span>À partir d'1 semaine :</span> <strong>65€ / jour</strong></div>
+            <div class="price-row highlight"><span>Au-delà de 10 jours :</span> <strong>60€ / jour</strong></div>
+          </div>
+          
+          <button class="btn-book" onclick="selectOffer('Pick-up avec chauffeur')">Réserver ce véhicule</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <button class="card-image media-trigger" type="button" onclick="openMediaViewer('f5')" aria-label="Voir les photos et la vidéo de l'appartement F5">
+          <img src="photos/villa.jpg" alt="Appartement F5 Bambilor" onerror="this.src='https://via.placeholder.com/600x400?text=Photo+Appartement+F5';">
+          <span class="badge">Hébergement</span>
+        </button>
+        <div class="card-content">
+          <h3>Appartement F5 Spacieux</h3>
+          <p class="description">Grand appartement F5 idéal pour les familles ou groupes d'amis. Grand confort et toutes commodités.</p>
+          
+          <div class="pricing-table">
+            <div class="price-row"><span>Tarif standard :</span> <strong>55€ / jour</strong></div>
+            <div class="price-row highlight"><span>À partir d'1 semaine :</span> <strong>52€ / jour</strong></div>
+            <div class="price-row highlight"><span>Au-delà de 10 jours :</span> <strong>50€ / jour</strong></div>
+          </div>
+
+          <div class="services-block">
+            <p class="services-title">Services inclus</p>
+            <ul class="service-list" aria-label="Services de l'appartement F5">
+              <li>Climatisation / ventilation</li>
+              <li>Wifi illimité / fibre</li>
+              <li>Cuisine équipée</li>
+              <li>Machine à laver</li>
+              <li>Ballon d'eau chaude</li>
+            </ul>
+          </div>
+          
+          <button class="btn-book" onclick="selectOffer('Appartement F5')">Réserver cet appartement</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <div class="media-modal" id="media-modal" aria-hidden="true">
+    <div class="media-modal-backdrop" onclick="closeMediaViewer()"></div>
+    <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="media-modal-title">
+      <button class="media-close" type="button" onclick="closeMediaViewer()" aria-label="Fermer la galerie">&times;</button>
+      <div class="media-modal-header">
+        <h3 id="media-modal-title">Galerie</h3>
+        <p id="media-modal-description"></p>
+      </div>
+
+      <div class="media-stage" id="media-stage"></div>
+
+      <div class="media-controls">
+        <button type="button" class="media-nav" onclick="previousMedia()">Précédent</button>
+        <div class="media-counter" id="media-counter">1 / 1</div>
+        <button type="button" class="media-nav" onclick="nextMedia()">Suivant</button>
+      </div>
+
+      <div class="media-thumbs" id="media-thumbs"></div>
+    </div>
+  </div>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2>Contact & Réservation</h2>
+      <p>Sélectionnez une offre ci-dessus ou contactez-nous directement par téléphone ou WhatsApp.</p>
+      
+      <div class="contact-box">
+        <p><strong>Téléphone / WhatsApp :</strong> +221 77 614 86 20</p>
+        <p><strong>Email :</strong> contact@votre-domaine.com</p>
+        <p><strong>Localisation :</strong> Bambilor, Sénégal</p>
+        <a id="whatsapp-link" href="https://wa.me/221776148620" target="_blank" class="btn-whatsapp">Envoyer un message WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><span class="senegal-flag" aria-hidden="true"></span>&copy; 2026 Bambilor Homes & Cars. Tous droits réservés.</p>
+    </div>
+            <div class="footer-credit">Créé par <a href="#">Neden Network</a></div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
