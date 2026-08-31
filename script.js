@@ -6,9 +6,9 @@ const mediaLibrary = {
     title: 'Studio à Bambilor',
     description: 'Photos du studio et vidéo de présentation.',
     items: [
-      { type: 'image', src: 'studio.jpg', alt: 'Vue principale du studio à Bambilor' },
-      { type: 'image', src: 'https://via.placeholder.com/1200x800?text=Studio+-+Chambre', alt: 'Chambre du studio' },
-      { type: 'image', src: 'https://via.placeholder.com/1200x800?text=Studio+-+Salon', alt: 'Salon du studio' },
+      { type: 'image', src: 'photos/salon.jpeg', alt: 'Vue principale du studio à Bambilor' },
+      { type: 'image', src: 'photos/chambreS.jpeg', alt: 'Chambre du studio' },
+      { type: 'image', src: 'photos/salonS.jpeg', alt: 'Salon du studio' },
       { type: 'video', src: 'photos/video1.mp4', title: 'Vidéo du studio' }
     ]
   },
@@ -26,9 +26,9 @@ const mediaLibrary = {
     title: 'Appartement F5 Spacieux',
     description: 'Photos des espaces de vie et vidéo de visite.',
     items: [
-      { type: 'image', src: 'f5.jpg', alt: 'Appartement F5 Bambilor' },
-      { type: 'image', src: 'https://via.placeholder.com/1200x800?text=F5+-+Chambre', alt: 'Chambre de l’appartement F5' },
-      { type: 'image', src: 'https://via.placeholder.com/1200x800?text=F5+-+Cuisine', alt: 'Cuisine de l’appartement F5' },
+      { type: 'image', src: 'photos/salon2.jpeg', alt: 'Appartement F5 Bambilor' },
+      { type: 'image', src: 'photos/chambreF.jpeg' },
+      { type: 'image', src: 'photos/cuisine.jpeg', alt: 'Cuisine de l’appartement F5' },
       { type: 'video', src: 'photos/video2.mp4', title: 'Vidéo de l’appartement F5' }
     ]
   }
