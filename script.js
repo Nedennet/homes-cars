@@ -17,9 +17,7 @@ const mediaLibrary = {
     description: 'Galerie du véhicule et vidéo de démonstration.',
     items: [
       { type: 'image', src: 'photos/pickup1.jpg', alt: 'Pick-up avec chauffeur à Bambilor' },
-      { type: 'image', src: 'https://via.placeholder.com/1200x800?text=Pick-up+-+Int%C3%A9rieur', alt: 'Intérieur du pick-up' },
       { type: 'image', src: 'photos/pickup2.jpg', alt: 'Extérieur du pick-up' },
-      { type: 'video', src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', title: 'Vidéo du pick-up' }
     ]
   },
   f5: {
