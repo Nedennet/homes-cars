@@ -27,7 +27,7 @@ const mediaLibrary = {
       { type: 'image', src: 'photos/salon2.jpeg', alt: 'Appartement F5 Bambilor' },
       { type: 'image', src: 'photos/chambreF.jpeg' },
       { type: 'image', src: 'photos/Cuisine.jpeg', alt: 'Cuisine de l’appartement F5' },
-      { type: 'video', src: 'photos/video2.mp4', title: 'Vidéo de l’appartement F5' }
+      { type: 'video', src: 'photos/video3.mp4', title: 'Vidéo de l’appartement F5' }
     ]
   }
 };
