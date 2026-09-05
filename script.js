@@ -1,6 +1,17 @@
 // Numéro WhatsApp par défaut (au format international sans espaces)
 const whatsappNumber = "221776148620";
 
+const whatsappTemplates = {
+  general: `Bonjour, je souhaite organiser mon sejour avec Bambilor Homes & Cars.\n\nDate d'arrivee :\nDate de depart :\nNombre de personnes :\nBesoin principal (logement/transport/pack) :\n\nPouvez-vous me proposer une formule ?`,
+  studio: `Bonjour, je souhaite reserver le Studio Bambilor.\n\nDates :\nNombre de personnes :\nDuree du sejour :\nBesoin de transport avec chauffeur : oui/non`,
+  pickup: `Bonjour, je souhaite reserver le pick-up avec chauffeur.\n\nDates :\nNombre de passagers :\nType de trajets (ville, aeroport, longue distance) :\nDuree :`,
+  f5: `Bonjour, je souhaite reserver l'Appartement F5 a Bambilor.\n\nDates :\nNombre de personnes :\nDuree du sejour :\nBesoin de transport avec chauffeur : oui/non`,
+  'pack-sejour': `Bonjour, je suis interesse par le PACK SEJOUR (Studio + transport avec chauffeur).\n\nDates :\nNombre de personnes :\nDuree :\nPouvez-vous me confirmer le meilleur tarif pack ?`,
+  'pack-arrivee': `Bonjour, je suis interesse par le PACK ARRIVEE.\n\nDate et heure d'arrivee :\nVol/Aeroport :\nNombre de personnes :\nDuree du sejour :`,
+  'pack-business': `Bonjour, je souhaite une offre PACK BUSINESS pour une mission autour de Dakar/Diamniadio/Bambilor/Rufisque/AIBD.\n\nEntreprise :\nNombre de collaborateurs :\nDates :\nBesoins logement/transport :`,
+  'pack-famille': `Bonjour, je suis interesse par le PACK FAMILLE (F5 + transport + assistance locale).\n\nDates :\nNombre d'adultes :\nNombre d'enfants :\nDuree du sejour :`
+};
+
 const mediaLibrary = {
   studio: {
     title: 'Studio à Bambilor',
@@ -122,14 +133,27 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-function selectOffer(offerName) {
-  const contactSection = document.getElementById('contact');
+function setWhatsAppLink(templateKey = 'general') {
   const whatsappBtn = document.getElementById('whatsapp-link');
-  
-  // Message pré-rempli pour WhatsApp
-  const message = encodeURIComponent(`Bonjour, je souhaite réserver l'offre suivante : ${offerName}`);
+  if (!whatsappBtn) {
+    return;
+  }
+
+  const template = whatsappTemplates[templateKey] || whatsappTemplates.general;
+  const message = encodeURIComponent(template);
   whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${message}`;
-  
-  // Défilement doux vers la section contact
-  contactSection.scrollIntoView({ behavior: 'smooth' });
 }
+
+function openWhatsAppIntent(templateKey = 'general') {
+  setWhatsAppLink(templateKey);
+  const whatsappBtn = document.getElementById('whatsapp-link');
+
+  if (!whatsappBtn) {
+    return;
+  }
+
+  window.open(whatsappBtn.href, '_blank', 'noopener');
+}
+
+// Définit un message générique au chargement de la page.
+setWhatsAppLink('general');

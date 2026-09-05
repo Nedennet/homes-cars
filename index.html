@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locations de Vacances & Véhicule - Bambilor, Sénégal</title>
+  <title>Bambilor Homes & Cars | Logement meublé + mobilité au Sénégal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,19 +12,43 @@
     <div class="container">
       <h1 class="logo">
         <img class="logo-image" src="photos/logo.png" alt="Logo Bambilor Homes and Cars">
-        <span class="logo-text">Bambilor Homes and Cars</span>
+        <span class="logo-text">Bambilor Homes &amp; Cars</span>
       </h1>
       <nav>
-        <a href="#offres">Nos Offres</a>
-        <a href="#contact" class="btn-nav">Réserver</a>
+        <a href="#offres">Logements</a>
+        <a href="#packs">Packs</a>
+        <a href="#contact" class="btn-nav">WhatsApp</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h2>Séjournez et déplacez-vous en toute sérénité au Sénégal</h2>
-      <p>Hébergements confortables à Bambilor et service de transport avec chauffeur.</p>
+      <p class="hero-kicker">Bambilor Homes &amp; Cars</p>
+      <h2>Séjournez à Bambilor en toute simplicité</h2>
+      <p>Votre logement meublé + votre mobilité au Sénégal. Studio, appartement familial et pick-up avec chauffeur, avec réservation directe sur WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn-hero btn-hero-ghost" href="#offres">Voir les logements</a>
+        <button class="btn-hero btn-hero-primary" type="button" onclick="openWhatsAppIntent('general')">Réserver sur WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-prop">
+    <div class="container">
+      <h2 class="section-title">Pourquoi choisir Bambilor Homes &amp; Cars ?</h2>
+      <div class="benefits-grid" aria-label="Avantages Bambilor Homes et Cars">
+        <p>Logements entièrement équipés</p>
+        <p>Wi-Fi fibre</p>
+        <p>Climatisation</p>
+        <p>Tarifs dégressifs</p>
+        <p>Transport avec chauffeur</p>
+        <p>Réservation directe</p>
+        <p>Assistance WhatsApp</p>
+      </div>
+      <div class="value-cta-row">
+        <button class="btn-book btn-main-cta" type="button" onclick="openWhatsAppIntent('general')">Réserver maintenant</button>
+      </div>
     </div>
   </section>
 
@@ -59,7 +83,7 @@
             </ul>
           </div>
           
-          <button class="btn-book" onclick="selectOffer('Studio Bambilor')">Réserver ce studio</button>
+          <button class="btn-book" onclick="openWhatsAppIntent('studio')">Réserver ce studio</button>
         </div>
       </article>
 
@@ -78,7 +102,7 @@
             <div class="price-row highlight"><span>Au-delà de 10 jours :</span> <strong>60€ / jour</strong></div>
           </div>
           
-          <button class="btn-book" onclick="selectOffer('Pick-up avec chauffeur')">Réserver ce véhicule</button>
+          <button class="btn-book" onclick="openWhatsAppIntent('pickup')">Réserver ce véhicule</button>
         </div>
       </article>
 
@@ -108,12 +132,60 @@
             </ul>
           </div>
           
-          <button class="btn-book" onclick="selectOffer('Appartement F5')">Réserver cet appartement</button>
+          <button class="btn-book" onclick="openWhatsAppIntent('f5')">Réserver cet appartement</button>
         </div>
       </article>
 
     </div>
   </main>
+
+  <section class="packs-section" id="packs">
+    <div class="container">
+      <h2 class="section-title">Nos Packs</h2>
+      <p class="packs-intro">Vous ne réservez pas seulement une chambre: vous choisissez une solution complète logement + déplacements au Sénégal.</p>
+
+      <div class="packs-grid">
+        <article class="pack-card pack-featured">
+          <p class="pack-label">Pack Séjour</p>
+          <h3>Studio + transport avec chauffeur</h3>
+          <div class="pack-pricing">
+            <p>7 jours studio: <strong>189 €</strong></p>
+            <p>7 jours pick-up: <strong>455 €</strong></p>
+            <p>Total habituel: <span>644 €</span></p>
+            <p class="pack-offer">Tarif pack conseillé: <strong>à partir de 599 €</strong></p>
+          </div>
+          <button class="btn-book" type="button" onclick="openWhatsAppIntent('pack-sejour')">Demander ce pack</button>
+        </article>
+
+        <article class="pack-card">
+          <p class="pack-label">Pack Arrivée</p>
+          <h3>Prise en charge dès l'atterrissage</h3>
+          <ul class="pack-list">
+            <li>Transfert depuis l'aéroport</li>
+            <li>Logement meublé</li>
+            <li>Transport pendant le séjour</li>
+            <li>Assistance WhatsApp</li>
+          </ul>
+          <button class="btn-book" type="button" onclick="openWhatsAppIntent('pack-arrivee')">Réserver mon arrivée</button>
+        </article>
+
+        <article class="pack-card">
+          <p class="pack-label">Pack Business</p>
+          <h3>Conçu pour les professionnels</h3>
+          <p class="pack-zones">Zones couvertes: Dakar, Diamniadio, Bambilor, Rufisque, AIBD et pôles industriels/administratifs.</p>
+          <p class="pack-zones">Le F5 peut être adapté pour héberger vos collaborateurs et équipes en déplacement.</p>
+          <button class="btn-book" type="button" onclick="openWhatsAppIntent('pack-business')">Parler à un conseiller</button>
+        </article>
+
+        <article class="pack-card">
+          <p class="pack-label">Pack Famille</p>
+          <h3>F5 + transport + assistance locale</h3>
+          <p class="pack-zones">Une formule pensée pour voyager en famille avec confort, mobilité et appui local pendant tout le séjour.</p>
+          <button class="btn-book" type="button" onclick="openWhatsAppIntent('pack-famille')">Organiser mon séjour famille</button>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <div class="media-modal" id="media-modal" aria-hidden="true">
     <div class="media-modal-backdrop" onclick="closeMediaViewer()"></div>
@@ -139,13 +211,16 @@
   <section class="contact-section" id="contact">
     <div class="container">
       <h2>Contact & Réservation</h2>
-      <p>Sélectionnez une offre ci-dessus ou contactez-nous directement par téléphone ou WhatsApp.</p>
+      <p>Vous arrivez au Sénégal ? On s'occupe de votre logement et de vos déplacements.</p>
       
       <div class="contact-box">
         <p><strong>Téléphone / WhatsApp :</strong> +221 77 614 86 20</p>
         <p><strong>Email :</strong> dknnconseils@gmail.com</p>
         <p><strong>Localisation :</strong> Bambilor, Sénégal</p>
-        <a id="whatsapp-link" href="https://wa.me/221776148620" target="_blank" class="btn-whatsapp">Envoyer un message WhatsApp</a>
+        <div class="contact-actions">
+          <a id="whatsapp-link" href="https://wa.me/221776148620" target="_blank" class="btn-whatsapp">Envoyer un message WhatsApp</a>
+          <button class="btn-book btn-secondary-cta" type="button" onclick="openWhatsAppIntent('general')">Réserver maintenant</button>
+        </div>
       </div>
     </div>
   </section>
